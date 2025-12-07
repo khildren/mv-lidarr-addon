@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  lidarr-mv-sync:
+    build: .
+    image: lidarr-mv-sync:latest
+    container_name: lidarr-mv-sync
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      LIDARR_URL: "http://10.0.0.124:8686"
+      LIDARR_API_KEY: "PUT_YOUR_LIDARR_API_KEY_HERE"
+      VIDEO_ROOT: "/videos"
+      MAX_DOWNLOADS_PER_RUN: "3"
+      DRY_RUN: "false"
+      RENAME_EXISTING_ONLY: "false"
+      VIDEO_QUALITY: "1080p"
+      YTDLP_MAX_RETRIES: "3"
+      ENABLE_LIDARR_PIPELINE: "true"
+      # LIDARR_ARTIST_ID: "111"
+      # ENABLE_FRAGMENT_CLEANUP: "true"
+      # FRAGMENT_DELETE_ORPHANS: "false"
+    volumes:
+      - /mnt/user/music\ videos:/videos
+      - /mnt/user/appdata/lidarr-mv-sync:/app
