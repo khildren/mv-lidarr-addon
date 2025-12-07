@@ -1,6 +1,8 @@
 # Lidarr Music Video Sync
 
-This directory contains the starter implementation of the Lidarr → YouTube → Music Video sync helper.
+This directory contains the STARTER implementation of the Lidarr → YouTube → Music Video sync helper.
+This will grab the occasional anomaly, and lets be honest the renaming feature is only abot 40% there. 
+
 
 Key pieces:
 
@@ -14,3 +16,8 @@ Key pieces:
   - supports DRY_RUN, MAX_DOWNLOADS_PER_RUN, rename-only stub, Unknown Artist skip, etc.
 - `cleanup_fragments.php` – one-shot or on-demand cleanup/merge of `.f137` / `.f251` fragments via ffmpeg
 - `docker-compose.yml` – Unraid-friendly compose file with example paths and env vars
+
+
+
+
+absoultly no garrentee this wont melt your computer. use in its own dir, if its shared with music or other videos it will probably rename your files with NO undo button. 
